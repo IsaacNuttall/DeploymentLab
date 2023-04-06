@@ -12,9 +12,19 @@ var rollbar = new Rollbar({
 // record a generic message and send it to Rollbar
 rollbar.log('Hello world!')
 
-const {turnGreen} = require('./controller.js')
+const { getCompliment, getFortune, addGoal, deleteGoal, updateGoal, enhanceGoal } = require('./controller')
 
-app.get('/api/moneyscam', turnGreen)
+app.get("/api/compliment", getCompliment);
+
+app.get("/api/fortune", getFortune);
+
+app.post("/api/goal", addGoal);
+
+app.delete('/api/goal/:id', deleteGoal);
+
+app.put('/api/goal/:id', updateGoal);
+
+app.put('/api/goal/:id', enhanceGoal)
 
 app.use(express.static(`${__dirname}/public`))
 app.listen(4000, () => console.log(`server running on 4000`))
