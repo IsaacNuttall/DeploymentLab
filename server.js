@@ -1,5 +1,11 @@
 const express = require('express')
+const cors = require('cors')
 const app = express()
+
+app.use(cors())
+app.use(express.json())
+app.use(express.static(`${__dirname}/public`))
+
 
 // include and initialize the rollbar library with your access token
 var Rollbar = require('rollbar')
@@ -24,9 +30,8 @@ app.delete('/api/goal/:id', deleteGoal);
 
 app.put('/api/goal/:id', updateGoal);
 
-app.put('/api/goal/:id', enhanceGoal)
+// app.put('/api/goal/:id', enhanceGoal)
 
-app.use(express.static(`${__dirname}/public`))
 app.listen(4000, () => console.log(`server running on 4000`))
 
 
