@@ -30,7 +30,10 @@ app.delete('/api/goal/:id', deleteGoal);
 
 app.put('/api/goal/:id', updateGoal);
 
-// app.put('/api/goal/:id', enhanceGoal)
+try {app.put('/api/goal/:id', enhanceGoal)
+} catch (e) {
+    console.log(e)
+}
 
 app.listen(4000, () => console.log(`server running on 4000`))
 
