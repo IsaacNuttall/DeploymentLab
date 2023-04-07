@@ -8,10 +8,10 @@ const updateInput = document.querySelector('#replacementGoal')
 const idToUpdate = document.querySelector('#replacementid')
 const updateBtn = document.querySelector('#updateButton')
 
-const baseURL = 'http://localhost:4000/api'
+const baseURL = 'http://18.220.53.166/api'
 
 const getCompliment = () => {
-    axios.get("http://18.220.53.166:4000/api/compliment/")
+    axios.get("http://18.220.53.166/api/compliment/")
         .then(res => {
             const data = res.data;
             alert(data);
@@ -19,7 +19,7 @@ const getCompliment = () => {
 };
 
 const getFortune = () => {
-    axios.get("http://18.220.53.166:4000/api/fortune/")
+    axios.get("http://18.220.53.166/api/fortune/")
         .then(res => {
             const data = res.data;
             alert(data);
